@@ -2,19 +2,26 @@
 <html lang="en">
   <head>
     <title>Mass Radio from Mass Multimedia</title>
+    <script type="text/javascript" src="jwplayer.js"></script>
   </head>
   <body>
     <h1>Mass Radio</h1>
     <h2>From Mass Multimedia</h2>
     <p>Listen to Mass Radio online.</p>
-    <script type="text/javascript" src="http://www.serverroom.us/jwplayer/swfobject.js"></script>
-  <div id="player_preview" style="float:left;">This text will be replaced. Streaming solutions by <a href="http://www.serverroom.us">Server Room - Shoutcast hosting, Flash Streaming</a></div>
-  <script type="text/javascript">
-    var so = new SWFObject('http://www.serverroom.us/jwplayer5/player-licensed.swf','mpl',560,24,'9');
-    so.addParam('allowscriptaccess','always');
-    so.addParam('allowfullscreen','true');
-    so.addParam('flashvars','&autostart=true&duration=-1&file=http://groove.wavestreamer.com:4945/;stream.nsv');
-    so.write('player_preview');
-  </script>
+    <div id="player">Player Loading...</div>
+    <script type="text/javascript">
+      jwplayer("player").setup({
+        flashplayer: "player.swf",
+        file: "http://groove.wavestreamer.com:4945/;stream.nsv",
+        height: 24,
+        width: 560,
+        duration: -1,
+        autostart: true,
+        controlbar: {
+          position: "bottom",
+          idlehide: false
+        }
+      });
+    </script>
   </body>
 </html>
